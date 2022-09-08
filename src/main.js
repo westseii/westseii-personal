@@ -1,11 +1,33 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-import './assets/main.css'
+//
+// icons
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
-const app = createApp(App)
+library.add(faGithub, faLinkedin);
 
-app.use(router)
+//
+// components
+import WeiRule from "./components/WeiRule.vue";
 
-app.mount('#app')
+//
+// global css
+import "normalize.css/normalize.css";
+import "./assets/main.css";
+
+const app = createApp(App);
+
+app.use(router);
+
+//
+// component registration
+app.component("FontAwesomeIcon", FontAwesomeIcon);
+app.component("WeiRule", WeiRule);
+
+//
+// ditto
+app.mount("#app");

@@ -1,85 +1,147 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+  import { externalLinks } from "./modules/useful.js";
+
+  import WeiHeader from "./components/WeiHeader.vue";
+  import WeiHeaderTitle from "./components/WeiHeaderTitle.vue";
+
+  const headerTitle = "Scott E. West";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="page">
+    <header class="header">
+      <WeiHeader>
+        <template #wei-header-top>
+          <div class="wei-header__external">
+            <a
+              :href="link.href"
+              :key="link.label"
+              rel="noopener noreferrer"
+              target="_blank"
+              v-for="link in externalLinks"
+            >
+              <FontAwesomeIcon
+                :icon="link.icon"
+                :size="link.iconSize"
+              />
+            </a>
+          </div>
+        </template>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+        <template #wei-header-mid>
+          <div class="wei-header__title">
+            <WeiHeaderTitle :header-title="headerTitle" />
+          </div>
+        </template>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+        <template #wei-header-btm>
+          <div class="wei-header__router-links">
+            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/about">About Me</RouterLink>
+            <RouterLink to="/">Stuff I've Made</RouterLink>
+            <RouterLink to="/">Resume</RouterLink>
+          </div>
+        </template>
+      </WeiHeader>
+    </header>
+
+    <main class="main">
+      <RouterView />
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__temp">
+      <h3>footer__temp</h3>
+      <WeiRule />
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
     </div>
-  </header>
-
-  <RouterView />
+  </footer>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+  .page {
+    min-height: 100vh;
+  }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+  .header,
+  .main,
+  .footer {
+    overflow: auto;
+  }
+  .main,
+  .footer {
+    margin: auto;
+    max-width: 768px;
+    width: 100%;
+  }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+  /* ext link styles */
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+  .wei-header__external {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    justify-content: flex-end;
+  }
+  .wei-header__external > a {
+    color: hsl(270, 50%, 33%);
+  }
+  .wei-header__external > a:hover {
+    filter: brightness(1.33);
+  }
+  .wei-header__external > a:nth-child(n + 2) {
+    margin-left: 6px;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+  /* title styles */
 
-  header .wrapper {
+  .wei-header__title {
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+  /* router link styles */
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+  .wei-header__router-links {
+    display: flex;
+    justify-content: space-between;
   }
-}
+  .wei-header__router-links > * {
+    color: hsl(270, 50%, 33%);
+    font-size: 2.1rem;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #000;
+  }
+  .wei-header__router-links > *:hover {
+    filter: brightness(1.33);
+  }
+
+  /* responsive */
+
+  @media screen and (max-width: 768px) {
+    .main,
+    .footer {
+      padding: 0 12px;
+    }
+
+    .wei-header__external {
+      justify-content: center;
+      margin: 24px 0;
+    }
+    .wei-header__external > a:nth-child(n + 2) {
+      margin-left: 24px;
+    }
+
+    .wei-header__router-links {
+      align-items: center;
+      flex-direction: column;
+    }
+    .wei-header__router-links > * {
+      padding: 6px;
+    }
+  }
 </style>
