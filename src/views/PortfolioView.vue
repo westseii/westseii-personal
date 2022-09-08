@@ -2,7 +2,7 @@
 
 <template>
   <section>
-    <h2>About View</h2>
+    <h2>Portfolio View</h2>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
     <WeiRule />
   </section>

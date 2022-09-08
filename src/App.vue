@@ -38,8 +38,8 @@
           <div class="wei-header__router-links">
             <RouterLink to="/">Home</RouterLink>
             <RouterLink to="/about">About Me</RouterLink>
-            <RouterLink to="/">Stuff I've Made</RouterLink>
-            <RouterLink to="/">Resume</RouterLink>
+            <RouterLink to="/portfolio">Stuff I've Made</RouterLink>
+            <RouterLink to="/resume">Resume</RouterLink>
           </div>
         </template>
       </WeiHeader>
@@ -54,10 +54,6 @@
     <div class="footer__temp">
       <h3>footer__temp</h3>
       <WeiRule />
-
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
 
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
     </div>
@@ -130,7 +126,7 @@
 
     .wei-header__external {
       justify-content: center;
-      margin: 24px 0;
+      margin-top: 12px;
     }
     .wei-header__external > a:nth-child(n + 2) {
       margin-left: 24px;

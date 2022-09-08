@@ -29,7 +29,6 @@
     font-family: "Major Mono Display", monospace;
     font-size: 5rem;
     letter-spacing: -6px;
-    margin-top: 0;
     position: relative;
     text-shadow: 6px 6px 48px hsla(270, 67%, 67%, 0.33);
   }
