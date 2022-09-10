@@ -2,10 +2,7 @@
 
 <template>
   <section>
-    <h2>Portfolio View</h2>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-    <WeiRule />
+    <h2>Things I've Made</h2>
+    <p>Coming soon!</p>
   </section>
 </template>
-
-<style scoped></style>

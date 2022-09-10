@@ -4,11 +4,10 @@
 
 <style scoped>
   .wei-rule {
-    background: hsl(270, 50%, 33%);
-    border-radius: 2px;
+    background: var(--wei-color-divider);
+    border-radius: 1px;
     border: none;
-    filter: opacity(0.67);
-    height: 4px;
+    height: 2px;
     margin: 12px 0;
   }
 </style>

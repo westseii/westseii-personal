@@ -26,11 +26,14 @@
 
 <style scoped>
   .wei-header-title {
+    color: var(--wei-color-title);
     font-family: "Major Mono Display", monospace;
     font-size: 5rem;
+    height: 0;
     letter-spacing: -6px;
+    line-height: 0;
+    margin: 0;
     position: relative;
-    text-shadow: 6px 6px 48px hsla(270, 67%, 67%, 0.33);
   }
   .wei-header-title::before {
     color: hsla(0, 100%, 50%, 0.23);
@@ -51,17 +54,17 @@
 
   @media screen and (max-width: 768px) {
     .wei-header-title {
-      font-size: 2.5rem;
-      letter-spacing: -3px;
-      text-shadow: 3px 3px 24px hsla(270, 67%, 67%, 0.33);
+      display: none;
+      /* font-size: 2.5rem; */
+      /* letter-spacing: -3px; */
     }
-    .wei-header-title::before {
+    /* .wei-header-title::before {
       top: -1px;
       left: -5px;
     }
     .wei-header-title::after {
       bottom: -1px;
       right: -5px;
-    }
+    } */
   }
 </style>

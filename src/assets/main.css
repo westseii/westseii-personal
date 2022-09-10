@@ -1,16 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+:root {
+  --wei-color-hue: 210;
+
+  --wei-color-background: hsl(var(--wei-color-hue), 20%, 5%);
+  --wei-color-text: hsl(var(--wei-color-hue), 63%, 67%);
+
+  --wei-color-divider: hsl(var(--wei-color-hue), 63%, 17%);
+  --wei-color-link: hsl(var(--wei-color-hue), 33%, 75%);
+  --wei-color-title: hsl(var(--wei-color-hue), 17%, 75%);
+}
+
 html {
   box-sizing: border-box;
   font-size: 10px;
 }
 
 body {
-  background: hsl(270, 33%, 7%);
-  color: hsl(270, 50%, 83%);
+  background: var(--wei-color-background);
+  color: var(--wei-color-text);
   font-family: "Open Sans", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.62;
 }
 

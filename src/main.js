@@ -24,7 +24,7 @@ const app = createApp(App);
 app.use(router);
 
 //
-// component registration
+// component registration; usable app wide
 app.component("FontAwesomeIcon", FontAwesomeIcon);
 app.component("WeiRule", WeiRule);
 
