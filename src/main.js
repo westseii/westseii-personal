@@ -11,7 +11,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faGithub, faLinkedin);
 
 //
-// components
+// components; global
 import WeiRule from "./components/WeiRule.vue";
 
 //
@@ -24,7 +24,7 @@ const app = createApp(App);
 app.use(router);
 
 //
-// component registration; usable app wide
+// component registration; global
 app.component("FontAwesomeIcon", FontAwesomeIcon);
 app.component("WeiRule", WeiRule);
 

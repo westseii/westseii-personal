@@ -5,15 +5,18 @@
   import WeiHeader from "./components/WeiHeader.vue";
   import WeiHeaderTitle from "./components/WeiHeaderTitle.vue";
 
+  // Header title display text
   const headerTitle = "Scott E. West";
 </script>
 
 <template>
+  <!-- Everything within the div.page container will take up 100% of the vertical space -->
   <div class="page">
-    <header class="header">
+    <!-- The header element is semantic only; no styles applied -->
+    <header>
       <WeiHeader>
         <template #wei-header-top>
-          <div class="wei-header-top">
+          <div class="wei-header--top">
             <a
               :href="link.href"
               :key="link.label"
@@ -31,13 +34,13 @@
         </template>
 
         <template #wei-header-mid>
-          <div class="wei-header-mid">
+          <div class="wei-header--mid">
             <WeiHeaderTitle :header-title="headerTitle" />
           </div>
         </template>
 
         <template #wei-header-btm>
-          <div class="wei-header-btm">
+          <div class="wei-header--btm">
             <RouterLink
               class="router-link"
               to="/"
@@ -80,20 +83,21 @@
 
   .main {
     margin: auto;
-    max-width: 768px;
+    max-width: 704px;
     width: 100%;
   }
   .footer {
-    background: linear-gradient(180deg, transparent, #000 333px);
+    background: linear-gradient(180deg, transparent, var(--wei-color-divider) 24px);
   }
 
-  /* ext link styles */
+  /* ext link styles; WeiHeader slot */
 
-  .wei-header-top {
+  .wei-header--top {
     display: flex;
-    height: 48px;
+    height: 50px;
     justify-content: flex-end;
   }
+
   .link-external {
     color: var(--wei-color-link);
   }
@@ -104,64 +108,68 @@
     margin-left: 12px;
   }
 
-  /* title styles */
+  /* title styles; WeiHeader slot */
 
-  .wei-header-mid {
+  .wei-header--mid {
     align-items: center;
     display: flex;
-    height: 78px;
-    /* justify-content: center; */
+    height: 100px;
+
+    margin-bottom: 8px;
   }
 
-  /* router link styles */
+  /* router link styles; WeiHeader slot */
 
-  .wei-header-btm {
+  .wei-header--btm {
     align-items: flex-end;
     display: flex;
-    height: 48px;
-    /* justify-content: space-evenly; */
+    height: 50px;
+
+    margin-bottom: -8px;
   }
+
   .router-link {
     color: var(--wei-color-link);
-    font-size: 2rem;
+    font-size: 2.1rem;
     text-decoration: none;
   }
   .router-link:hover {
     filter: brightness(1.33);
   }
   .router-link:nth-child(n + 2) {
-    margin-left: 48px;
+    margin-left: 24px;
   }
 
   /* responsive */
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 704px) {
     .main {
       padding: 0 12px;
     }
 
-    .wei-header-top {
-      justify-content: center;
-    }
-
-    .wei-header-mid {
+    .wei-header--top {
       height: unset;
     }
-
-    .wei-header-btm {
-      align-items: center;
+    .wei-header--mid {
+      display: none;
+    }
+    .wei-header--btm {
+      align-items: flex-start;
       flex-direction: column;
       height: unset;
     }
+
     .router-link {
-      padding: 12px;
-      text-shadow: 2px 2px 2px #000;
+      padding: 6px 0;
+    }
+    .router-link:first-child {
+      padding-top: 0;
     }
     .router-link:nth-child(n + 2) {
       margin-left: unset;
     }
     .router-link:last-child {
-      margin-bottom: -12px;
+      padding-bottom: 0;
     }
   }
 </style>

@@ -1,19 +1,20 @@
 <template>
   <div class="container">
-    <h3>Footer</h3>
-    <p>Lorem ipsum dolor sit.</p>
+    <p>Oi! I see you looking down here...</p>
   </div>
 </template>
 
 <style scoped>
   .container {
+    color: var(--wei-color-link);
+
     margin: auto;
-    max-width: 768px;
+    max-width: 704px;
     padding: 12px 0;
     width: 100%;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 704px) {
     .container {
       padding: 12px;
     }

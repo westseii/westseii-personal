@@ -1,15 +1,18 @@
+// The icon size for external header links; from 1x to 10x
+const iconSize = "3x";
+
 const externalLinks = [
   {
-    href: "https://www.linkedin.com/in/scott-west",
     label: "LinkedIn",
+    href: "https://www.linkedin.com/in/scott-west",
     icon: ["fab", "linkedin"],
-    iconSize: "3x",
+    iconSize: iconSize,
   },
   {
-    href: "https://github.com/westseii",
     label: "GitHub",
+    href: "https://github.com/westseii",
     icon: ["fab", "github"],
-    iconSize: "3x",
+    iconSize: iconSize,
   },
 ];
 

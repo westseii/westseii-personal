@@ -18,7 +18,7 @@
     background-position: center;
     background-size: cover;
     border-bottom: solid 2px var(--wei-color-divider);
-    box-shadow: inset 0 -160px 48px -100px #000;
+    box-shadow: inset 0 -100px 100px var(--wei-color-background);
   }
 
   .container {
@@ -26,16 +26,12 @@
     flex-direction: column;
 
     margin: auto;
-    max-width: 768px;
+    max-width: 704px;
     padding: 12px 0;
     width: 100%;
   }
 
-  @media screen and (max-width: 768px) {
-    .header-background {
-      background-image: url("../assets/screenshots/source-googly-1.jpg");
-    }
-
+  @media screen and (max-width: 704px) {
     .container {
       padding: 12px;
     }

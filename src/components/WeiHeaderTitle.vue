@@ -51,20 +51,4 @@
     bottom: -2px;
     right: -10px;
   }
-
-  @media screen and (max-width: 768px) {
-    .wei-header-title {
-      display: none;
-      /* font-size: 2.5rem; */
-      /* letter-spacing: -3px; */
-    }
-    /* .wei-header-title::before {
-      top: -1px;
-      left: -5px;
-    }
-    .wei-header-title::after {
-      bottom: -1px;
-      right: -5px;
-    } */
-  }
 </style>
