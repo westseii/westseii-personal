@@ -29,6 +29,7 @@
     color: var(--wei-color-title);
     font-family: "Major Mono Display", monospace;
     font-size: 5rem;
+    font-weight: normal;
     height: 0;
     letter-spacing: -6px;
     line-height: 0;

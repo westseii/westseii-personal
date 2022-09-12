@@ -82,7 +82,7 @@
   }
 
   .main {
-    margin: auto;
+    margin: auto auto 100px auto;
     max-width: 704px;
     width: 100%;
   }
@@ -131,7 +131,7 @@
   .router-link {
     color: var(--wei-color-link);
     font-size: 2.1rem;
-    text-decoration: none;
+    text-decoration: underline;
   }
   .router-link:hover {
     filter: brightness(1.33);
