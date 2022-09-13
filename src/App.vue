@@ -82,7 +82,7 @@
   }
 
   .main {
-    margin: auto auto 100px auto;
+    margin: auto auto 50px auto;
     max-width: 704px;
     width: 100%;
   }
@@ -113,7 +113,7 @@
   .wei-header--mid {
     align-items: center;
     display: flex;
-    height: 100px;
+    height: 76px;
 
     margin-bottom: 8px;
   }

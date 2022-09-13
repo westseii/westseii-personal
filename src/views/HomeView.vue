@@ -2,6 +2,6 @@
 
 <template>
   <section>
-    <h2>Hello!</h2>
+    <h2>Home</h2>
   </section>
 </template>

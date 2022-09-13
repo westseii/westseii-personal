@@ -17,8 +17,7 @@
     background-image: url("../assets/screenshots/source-gc2-1.jpg");
     background-position: center;
     background-size: cover;
-    border-bottom: solid 2px var(--wei-color-divider);
-    box-shadow: inset 0 -100px 100px var(--wei-color-background);
+    box-shadow: inset 0 -96px 48px -48px var(--wei-color-background);
   }
 
   .container {

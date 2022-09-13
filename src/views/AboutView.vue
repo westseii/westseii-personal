@@ -2,7 +2,7 @@
   import { onMounted, ref } from "vue";
 
   const aboutData = ref();
-  const aboutDataPath = "src/modules/view.about.json";
+  const aboutDataPath = "/json/view.about.json";
 
   const fetchAboutData = async (dataPath) => {
     const res = await fetch(dataPath);
@@ -17,40 +17,44 @@
   <section>
     <h2>About Me</h2>
 
-    <div
-      :key="text.id"
-      v-for="text in aboutData"
-    >
-      <h3 class="sub-title">{{ text.titleText }}</h3>
-      <div class="card">
+    <div>
+      <div
+        :key="text.id"
+        class="card"
+        v-for="text in aboutData"
+      >
+        <h3>{{ text.titleText }}</h3>
+        <WeiRule />
+
         <p v-for="p in text.paragraphs">{{ p }}</p>
       </div>
-      <br />
     </div>
   </section>
 </template>
 
 <style scoped>
-  .sub-title {
-    margin-left: 12px;
-  }
-
   .card {
-    background: linear-gradient(0deg, hsl(210, 20%, 10%), transparent);
-    border-radius: 6px;
+    background: linear-gradient(180deg, var(--wei-color-card) calc(100% - 24px), transparent);
+    border-radius: 2px;
     border-top: solid 2px var(--wei-color-divider);
     overflow: auto;
-    padding: 0 24px 24px 12px;
+    padding: 0 12px 24px 12px;
+  }
+  .card:nth-child(n + 2) {
+    margin-top: 12px;
   }
 
   @media screen and (max-width: 704px) {
-    .sub-title {
-      margin-left: unset;
-    }
-
     .card {
+      background: var(--wei-color-card);
       border-radius: unset;
       margin: 0 -12px;
+    }
+    .card:nth-child(n + 2) {
+      margin-top: unset;
+    }
+    .card:last-child {
+      background: linear-gradient(180deg, var(--wei-color-card) calc(100% - 24px), transparent);
     }
   }
 </style>

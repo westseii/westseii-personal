@@ -2,14 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 :root {
-  --wei-color-hue: 210;
+  --wei-color-hue: 213;
 
-  --wei-color-background: hsl(var(--wei-color-hue), 20%, 5%);
-  --wei-color-text: hsl(var(--wei-color-hue), 63%, 67%);
+  --wei-color-background: hsl(var(--wei-color-hue), 0%, 5%);
+  --wei-color-link: hsl(var(--wei-color-hue), 63%, 58%);
+  --wei-color-text: hsl(var(--wei-color-hue), 33%, 80%);
+  --wei-color-title: hsl(var(--wei-color-hue), 33%, 80%);
 
-  --wei-color-divider: hsl(var(--wei-color-hue), 63%, 17%);
-  --wei-color-link: hsl(var(--wei-color-hue), 33%, 75%);
-  --wei-color-title: hsl(var(--wei-color-hue), 17%, 75%);
+  --wei-color-card: hsl(var(--wei-color-hue), 13%, 10%);
+  --wei-color-divider: hsl(var(--wei-color-hue), 33%, 15%);
 }
 
 html {
@@ -38,4 +39,5 @@ h6 {
 *::before,
 *::after {
   box-sizing: inherit;
+  font-weight: normal;
 }
