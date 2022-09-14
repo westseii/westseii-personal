@@ -5,7 +5,8 @@
 <style scoped>
   .wei-rule {
     background: var(--wei-color-divider);
+    border-radius: 1px;
     border: none;
-    height: 1px;
+    height: 2px;
   }
 </style>

@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 :root {
-  --wei-color-hue: 213;
+  --wei-color-hue: 225;
 
   --wei-color-background: hsl(var(--wei-color-hue), 0%, 5%);
-  --wei-color-link: hsl(var(--wei-color-hue), 63%, 58%);
+  --wei-color-link: hsl(345, 63%, 58%);
   --wei-color-text: hsl(var(--wei-color-hue), 33%, 80%);
   --wei-color-title: hsl(var(--wei-color-hue), 33%, 80%);
 

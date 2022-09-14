@@ -14,10 +14,11 @@
   .header-background {
     background: #000;
 
+    /* pass this in as a prop later on; randomize banner img */
     background-image: url("../assets/screenshots/source-gc2-1.jpg");
     background-position: center;
     background-size: cover;
-    box-shadow: inset 0 -96px 48px -48px var(--wei-color-background);
+    box-shadow: inset 0 -100px 50px -50px var(--wei-color-background);
   }
 
   .container {

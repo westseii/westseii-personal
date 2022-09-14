@@ -1,6 +1,8 @@
 <script setup>
   import { onMounted, ref } from "vue";
 
+  import WeiRule from "../components/WeiRule.vue";
+
   const aboutData = ref();
   const aboutDataPath = "/json/view.about.json";
 
@@ -26,7 +28,14 @@
         <h3>{{ text.titleText }}</h3>
         <WeiRule />
 
-        <p v-for="p in text.paragraphs">{{ p }}</p>
+        <div>
+          <p
+            class="indent"
+            v-for="p in text.paragraphs"
+          >
+            {{ p }}
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -34,27 +43,32 @@
 
 <style scoped>
   .card {
-    background: linear-gradient(180deg, var(--wei-color-card) calc(100% - 24px), transparent);
-    border-radius: 2px;
-    border-top: solid 2px var(--wei-color-divider);
+    background: var(--wei-color-card);
+    border-radius: 6px;
     overflow: auto;
-    padding: 0 12px 24px 12px;
+    padding: 0 36px 36px 12px;
   }
   .card:nth-child(n + 2) {
     margin-top: 12px;
   }
 
+  .indent {
+    text-indent: 2rem;
+  }
+
   @media screen and (max-width: 704px) {
     .card {
-      background: var(--wei-color-card);
       border-radius: unset;
       margin: 0 -12px;
+    }
+    .card:first-child {
+      background: linear-gradient(180deg, transparent, var(--wei-color-card) 50px);
     }
     .card:nth-child(n + 2) {
       margin-top: unset;
     }
     .card:last-child {
-      background: linear-gradient(180deg, var(--wei-color-card) calc(100% - 24px), transparent);
+      background: linear-gradient(180deg, var(--wei-color-card) calc(100% - 50px), transparent);
     }
   }
 </style>

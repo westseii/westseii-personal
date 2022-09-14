@@ -6,7 +6,7 @@
   import WeiHeaderTitle from "./components/WeiHeaderTitle.vue";
 
   // Header title display text
-  const headerTitle = "Scott E. West";
+  const headerTitle = "Scott e West";
 </script>
 
 <template>
@@ -87,7 +87,7 @@
     width: 100%;
   }
   .footer {
-    background: linear-gradient(180deg, transparent, var(--wei-color-divider) 24px);
+    background: linear-gradient(180deg, transparent, var(--wei-color-card) 50px);
   }
 
   /* ext link styles; WeiHeader slot */
@@ -114,8 +114,9 @@
     align-items: center;
     display: flex;
     height: 76px;
+    justify-content: center;
 
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 
   /* router link styles; WeiHeader slot */
@@ -125,13 +126,14 @@
     display: flex;
     height: 50px;
 
-    margin-bottom: -8px;
+    margin-bottom: -12px;
   }
 
   .router-link {
     color: var(--wei-color-link);
     font-size: 2.1rem;
     text-decoration: underline;
+    text-shadow: 3px 3px 3px var(--wei-color-background);
   }
   .router-link:hover {
     filter: brightness(1.33);
@@ -149,27 +151,14 @@
 
     .wei-header--top {
       height: unset;
+      justify-content: flex-start;
     }
     .wei-header--mid {
       display: none;
     }
     .wei-header--btm {
-      align-items: flex-start;
       flex-direction: column;
       height: unset;
-    }
-
-    .router-link {
-      padding: 6px 0;
-    }
-    .router-link:first-child {
-      padding-top: 0;
-    }
-    .router-link:nth-child(n + 2) {
-      margin-left: unset;
-    }
-    .router-link:last-child {
-      padding-bottom: 0;
     }
   }
 </style>

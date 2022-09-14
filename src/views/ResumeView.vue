@@ -3,5 +3,7 @@
 <template>
   <section>
     <h2>Resume</h2>
+    <p>Coming soon.</p>
+    <p>Ditto.</p>
   </section>
 </template>
