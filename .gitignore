@@ -27,5 +27,7 @@ coverage
 *.sln
 *.sw?
 
+.firebase
 *.code-workspace
 deploy.sh
+public/json/*

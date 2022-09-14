@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 :root {
-  --wei-color-hue: 225;
+  --wei-color-hue: 218;
 
   --wei-color-background: hsl(var(--wei-color-hue), 0%, 5%);
   --wei-color-link: hsl(345, 63%, 58%);
@@ -10,7 +10,7 @@
   --wei-color-title: hsl(var(--wei-color-hue), 33%, 80%);
 
   --wei-color-card: hsl(var(--wei-color-hue), 13%, 10%);
-  --wei-color-divider: hsl(var(--wei-color-hue), 33%, 15%);
+  --wei-color-divider: hsl(var(--wei-color-hue), 17%, 15%);
 }
 
 html {
