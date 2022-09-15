@@ -43,7 +43,7 @@
           <div class="wei-header--btm">
             <RouterLink
               class="router-link"
-              to="/"
+              to="/home"
               >Home</RouterLink
             >
             <RouterLink
@@ -67,7 +67,11 @@
     </header>
 
     <main class="main">
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <transition name="fade">
+          <component :is="Component" />
+        </transition>
+      </RouterView>
     </main>
   </div>
 
@@ -85,6 +89,8 @@
     margin: auto auto 50px auto;
     max-width: 704px;
     width: 100%;
+
+    position: relative;
   }
   .footer {
     background: linear-gradient(180deg, transparent, var(--wei-color-card) 50px);
@@ -134,12 +140,37 @@
     font-size: 2.1rem;
     text-decoration: underline;
     text-shadow: 3px 3px 3px var(--wei-color-background);
+    transition: 0.125s;
+  }
+  .router-link:not(.router-link-active) {
+    filter: brightness(0.67);
   }
   .router-link:hover {
     filter: brightness(1.33);
   }
+  /* built in vue router class */
+  .router-link-active {
+    filter: brightness(1.33);
+    transform: translateY(-3px);
+  }
   .router-link:nth-child(n + 2) {
     margin-left: 24px;
+  }
+
+  /* transitions */
+
+  .fade-enter-active,
+  .fade-leave-active {
+    position: absolute;
+    transition: 0.33s ease-in-out;
+  }
+  .fade-enter-from {
+    filter: opacity(0);
+    transform: translateX(25px);
+  }
+  .fade-leave-to {
+    filter: opacity(0) blur(6px);
+    transform: translateX(-75px);
   }
 
   /* responsive */
@@ -159,6 +190,20 @@
     .wei-header--btm {
       flex-direction: column;
       height: unset;
+    }
+
+    /* built in vue router class */
+    .router-link-active {
+      transform: translateX(-12px);
+    }
+
+    /* transitions */
+
+    .fade-enter-from {
+      transform: translateY(25px);
+    }
+    .fade-leave-to {
+      transform: translateY(-75px);
     }
   }
 </style>

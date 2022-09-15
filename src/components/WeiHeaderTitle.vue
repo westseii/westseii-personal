@@ -10,7 +10,7 @@
 
   const cssProps = computed(() => {
     return {
-      "--header-title": '"' + props.headerTitle + '"',
+      "--header-title": `"${props.headerTitle}"`,
     };
   });
 </script>
@@ -28,7 +28,7 @@
   .wei-header-title {
     color: var(--wei-color-title);
     font-family: "Major Mono Display", monospace;
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
     height: 0;
     line-height: 0;

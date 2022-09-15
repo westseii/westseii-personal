@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
   <div class="header-background">
     <div class="container">
@@ -12,13 +14,12 @@
 
 <style scoped>
   .header-background {
-    background: #000;
+    background: var(--wei-color-background);
 
-    /* pass this in as a prop later on; randomize banner img */
-    background-image: url("../assets/screenshots/source-gc2-1.jpg");
+    background-image: url("../assets/screenshots/source-duel-hal-1.jpg");
     background-position: center;
     background-size: cover;
-    box-shadow: inset 0 -100px 50px -50px var(--wei-color-background);
+    box-shadow: inset 0 -150px 25px -100px var(--wei-color-background);
   }
 
   .container {
