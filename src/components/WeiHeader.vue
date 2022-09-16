@@ -2,12 +2,14 @@
 
 <template>
   <div class="header-background">
-    <div class="container">
-      <slot name="wei-header-top"></slot>
+    <div class="header-gradient">
+      <div class="container">
+        <slot name="wei-header-top"></slot>
 
-      <slot name="wei-header-mid"></slot>
+        <slot name="wei-header-mid"></slot>
 
-      <slot name="wei-header-btm"></slot>
+        <slot name="wei-header-btm"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -19,7 +21,10 @@
     background-image: url("../assets/screenshots/source-duel-hal-1.jpg");
     background-position: center;
     background-size: cover;
-    box-shadow: inset 0 -150px 25px -100px var(--wei-color-background);
+  }
+
+  .header-gradient {
+    background: linear-gradient(180deg, transparent calc(100% - 50px), var(--wei-color-background));
   }
 
   .container {

@@ -1,8 +1,11 @@
 <script setup>
-  import { onMounted, ref } from "vue";
+  // import { onMounted, ref } from "vue";
+
+  import aboutData from "../data/about.js";
 
   import WeiRule from "../components/WeiRule.vue";
 
+  /*
   const aboutData = ref();
   const aboutDataPath = "/json/view.about.json";
 
@@ -13,35 +16,41 @@
   };
 
   onMounted(() => fetchAboutData(aboutDataPath).then((d) => (aboutData.value = d)));
+  */
 </script>
 
 <template>
-  <section>
+  <section class="container">
     <h2>About Me</h2>
 
     <div>
       <div
-        :key="text.id"
+        :key="data.id"
         class="card"
-        v-for="text in aboutData"
+        v-for="data in aboutData"
       >
-        <h3>{{ text.titleText }}</h3>
+        <div class="card-header">
+          <FontAwesomeIcon
+            :icon="data.icon"
+            class="card-header__icon"
+            size="2x"
+            v-if="data.icon"
+          />
+          <h3>{{ data.titleText }}</h3>
+        </div>
         <WeiRule />
 
-        <div>
-          <p
-            class="indent"
-            v-for="p in text.paragraphs"
-          >
-            {{ p }}
-          </p>
-        </div>
+        <div v-html="data.content" />
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
+  .container {
+    width: 100%;
+  }
+
   .card {
     background: var(--wei-color-card);
     border-radius: 6px;
@@ -52,7 +61,16 @@
     margin-top: 12px;
   }
 
-  .indent {
+  .card-header {
+    align-items: center;
+    color: var(--wei-color-link);
+    display: flex;
+  }
+  .card-header__icon {
+    margin-right: 12px;
+  }
+
+  .card:deep(.indent) {
     text-indent: 2rem;
   }
 
