@@ -1,19 +1,13 @@
-<script setup>
-  import WeiRule from "./WeiRule.vue";
-</script>
+<script setup></script>
 
 <template>
-  <div class="container text">
-    <p>Oi! I see you looking down here...</p>
-    <WeiRule />
+  <div class="container">
+    <div class="center">Hello!</div>
+    <br />
 
-    <small>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero id ullam minus, quas eos rerum
-        amet voluptate repellat, veniam eum quis neque quos doloremque, impedit dolor. Labore neque
-        error nam delectus harum ipsam.
-      </p>
-    </small>
+    <div><small>Created with Vue 3.2.38.</small></div>
+    <div><small>Hosted on Google Firebase.</small></div>
+    <div><small>Icons provided by Font Awesome.</small></div>
   </div>
 </template>
 
@@ -25,7 +19,7 @@
     width: 100%;
   }
 
-  .text {
+  .center {
     text-align: center;
   }
 

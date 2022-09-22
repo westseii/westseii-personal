@@ -43,11 +43,6 @@
           <div class="wei-header--btm">
             <RouterLink
               class="router-link"
-              to="/home"
-              >Home</RouterLink
-            >
-            <RouterLink
-              class="router-link"
               to="/about"
               >About Me</RouterLink
             >

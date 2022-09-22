@@ -9,4 +9,8 @@
     border: none;
     height: 2px;
   }
+
+  .wei-rule-h {
+    background: var(--wei-color-link);
+  }
 </style>
