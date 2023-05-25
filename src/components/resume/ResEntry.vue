@@ -1,6 +1,6 @@
 <script setup>
   const props = defineProps({
-    entryObject: {
+    entryData: {
       type: Object,
       required: true,
     },
@@ -10,30 +10,30 @@
 <template>
   <div>
     <div class="flex">
-      <h3
-        class="entry-l desat"
-        v-if="entryObject.name"
-      >
-        {{ entryObject.name }}
-      </h3>
-
       <div
-        class="entry-mid"
-        v-if="entryObject.desc"
+        class="entry__l title"
+        v-if="entryData.name"
       >
-        {{ entryObject.desc }}
+        {{ entryData.name }}
       </div>
 
       <div
-        class="entry-r"
-        v-if="entryObject.period"
+        class="entry__mid"
+        v-if="entryData.desc"
       >
-        {{ entryObject.period.from }} — {{ entryObject.period.to }}
+        {{ entryData.desc }}
+      </div>
+
+      <div
+        class="entry__r"
+        v-if="entryData.period"
+      >
+        {{ entryData.period.from }} — {{ entryData.period.to }}
       </div>
     </div>
 
     <ul>
-      <li v-for="bullet in entryObject.bullets">
+      <li v-for="bullet in entryData.bullets">
         {{ bullet }}
       </li>
     </ul>
@@ -46,18 +46,18 @@
     display: flex;
   }
 
-  .desat {
-    filter: saturate(0);
+  .title {
+    color: var(--wei-color-link);
   }
 
-  .entry-l {
+  .entry__l {
     width: 30%;
   }
-  .entry-mid {
+  .entry__mid {
     text-align: center;
     width: 40%;
   }
-  .entry-r {
+  .entry__r {
     text-align: right;
     width: 30%;
   }

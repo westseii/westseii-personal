@@ -2,7 +2,6 @@
   import resumeContent from "../data/resume.js";
 
   import ContentCardSlotted from "../components/ContentCardSlotted.vue";
-  import ResEntry from "../components/resume/ResEntry.vue";
   import ResSection from "../components/resume/ResSection.vue";
 </script>
 
@@ -10,24 +9,24 @@
   <section class="container">
     <h2>Resume</h2>
 
-    <div class="mobile">
-      <small>* Mobile styles are a work in progress!</small>
+    <div class="mobile-message">
+      <small>* Mobile styles are a work in progress!!!</small>
     </div>
 
     <div class="res-body">
-      <ContentCardSlotted>
+      <ContentCardSlotted style="padding: 12px">
         <template #card-content>
-          <section class="res-header">
-            <div class="res-header__l">
+          <section class="resume-header">
+            <div class="resume-header__l">
               <div>+1 (563) 505-3678</div>
               <div>westseii8919@gmail.com</div>
             </div>
 
-            <div class="res-header__mid">
+            <div class="resume-header__mid">
               <h2>Scott E. West</h2>
             </div>
 
-            <div class="res-header__r">
+            <div class="resume-header__r">
               <div>linkedin.com/in/scott-west</div>
               <div>github.com/westseii</div>
               <div>scottwest.dev</div>
@@ -36,55 +35,12 @@
         </template>
       </ContentCardSlotted>
 
-      <ContentCardSlotted>
+      <ContentCardSlotted
+        :key="resumeSection.id"
+        v-for="resumeSection in resumeContent"
+      >
         <template #card-content>
-          <ResSection :heading-text="'Education'">
-            <template #res-entries>
-              <ResEntry
-                :entry-object="entryObject"
-                v-for="entryObject in resumeContent.education.entries"
-              />
-            </template>
-          </ResSection>
-        </template>
-      </ContentCardSlotted>
-
-      <ContentCardSlotted>
-        <template #card-content>
-          <ResSection :heading-text="'Accomplishments'">
-            <template #res-entries>
-              <ResEntry
-                :entry-object="entryObject"
-                v-for="entryObject in resumeContent.accomplishments.entries"
-              />
-            </template>
-          </ResSection>
-        </template>
-      </ContentCardSlotted>
-
-      <ContentCardSlotted>
-        <template #card-content>
-          <ResSection :heading-text="'Technical Skills'">
-            <template #res-entries>
-              <ResEntry
-                :entry-object="entryObject"
-                v-for="entryObject in resumeContent.technicalSkills.entries"
-              />
-            </template>
-          </ResSection>
-        </template>
-      </ContentCardSlotted>
-
-      <ContentCardSlotted>
-        <template #card-content>
-          <ResSection :heading-text="'Other Work'">
-            <template #res-entries>
-              <ResEntry
-                :entry-object="entryObject"
-                v-for="entryObject in resumeContent.otherWork.entries"
-              />
-            </template>
-          </ResSection>
+          <ResSection :resume-data="resumeSection" />
         </template>
       </ContentCardSlotted>
     </div>
@@ -96,32 +52,29 @@
     width: 100%;
   }
 
-  .res-header {
+  .resume-header {
     align-items: center;
     display: flex;
   }
-  .res-header__l {
+  .resume-header__l {
     width: 30%;
   }
-  .res-header__mid {
+  .resume-header__mid {
     text-align: center;
     width: 40%;
   }
-  .res-header__r {
+  .resume-header__r {
     text-align: right;
     width: 30%;
   }
 
-  .res-body {
-  }
-
-  .mobile {
+  .mobile-message {
     color: orangered;
     display: none;
   }
 
   @media screen and (max-width: 704px) {
-    .mobile {
+    .mobile-message {
       display: block;
     }
   }

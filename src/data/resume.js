@@ -1,8 +1,10 @@
 const resumeContent = {
   education: {
+    id: 0,
     name: "Education",
     entries: [
       {
+        id: 0,
         name: "Iowa City, IA",
         desc: "University of Iowa",
         period: {
@@ -14,9 +16,11 @@ const resumeContent = {
     ],
   },
   accomplishments: {
+    id: 1,
     name: "Accomplishments",
     entries: [
       {
+        id: 0,
         name: "CS Tutor",
         desc: "Intro to CS, CS 1",
         period: {
@@ -28,6 +32,7 @@ const resumeContent = {
         ],
       },
       {
+        id: 1,
         name: "Personal Website",
         desc: "Personal project",
         period: null,
@@ -38,6 +43,7 @@ const resumeContent = {
         ],
       },
       {
+        id: 2,
         name: "Link Layer Characteristics",
         desc: "Class project",
         period: null,
@@ -47,6 +53,7 @@ const resumeContent = {
         ],
       },
       {
+        id: 3,
         name: "BGP Routing / Hijack Detection",
         desc: "Class project",
         period: null,
@@ -55,6 +62,7 @@ const resumeContent = {
         ],
       },
       {
+        id: 4,
         name: "Web Intelligence Gathering",
         desc: "Class project",
         period: null,
@@ -64,25 +72,39 @@ const resumeContent = {
       },
     ],
   },
-  technicalSkills: {
+  technicalSkills2: {
+    id: 2,
     name: "Technical Skills",
     entries: [
       {
-        name: null,
+        id: 0,
+        name: "Languages",
         desc: null,
         period: null,
-        bullets: [
-          "Languages: JavaScript (ES6+), HTML / CSS, Python 3, Java",
-          "Frameworks / Libraries: Vue.js (v3), PrimeVue, MongoDB (Express / Mongoose)",
-          "Tools / Other: Git, Terminal / Command line, npm / Yarn, Linux",
-        ],
+        bullets: ["JavaScript (ES6+), HTML / CSS, Python 3, Java"],
+      },
+      {
+        id: 0,
+        name: "Frameworks / Libraries",
+        desc: null,
+        period: null,
+        bullets: ["Vue.js (v3), PrimeVue, MongoDB (Express / Mongoose)"],
+      },
+      {
+        id: 0,
+        name: "Tools / Other",
+        desc: null,
+        period: null,
+        bullets: ["Git, Terminal / Command line, npm / Yarn, Linux"],
       },
     ],
   },
   otherWork: {
+    id: 3,
     name: "Other Work",
     entries: [
       {
+        id: 0,
         name: "Community Content Creator",
         desc: "Game design / Asset creation",
         period: null,

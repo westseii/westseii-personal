@@ -1,4 +1,6 @@
 <script setup>
+  import WeiRule from "./WeiRule.vue";
+
   const props = defineProps({
     cardContent: Object,
   });
@@ -15,10 +17,11 @@
       />
       <h3>{{ cardContent.titleText }}</h3>
     </div>
+    <!-- <WeiRule /> -->
 
     <div v-html="cardContent.content" />
 
-    <slot name="btm-content"></slot>
+    <slot name="card-content"></slot>
   </div>
 </template>
 
@@ -27,7 +30,7 @@
     background: var(--wei-color-card);
     border-radius: 6px;
     overflow: auto;
-    padding: 0 36px 36px 12px;
+    padding: 0 12px 12px 12px;
   }
   .card:nth-child(n + 2) {
     margin-top: 12px;

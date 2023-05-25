@@ -1,20 +1,23 @@
 <script setup>
-  import WeiRule from "../WeiRule.vue";
+  import ResEntry from "./ResEntry.vue";
 
   const props = defineProps({
-    headingText: {
-      type: String,
-      default: "Heading",
+    resumeData: {
+      type: Object,
+      required: true,
     },
   });
 </script>
 
 <template>
   <section>
-    <h2>{{ headingText }}</h2>
-    <WeiRule />
+    <h2>{{ resumeData.name }}</h2>
 
-    <slot name="res-entries"></slot>
+    <ResEntry
+      :entry-data="entry"
+      :key="entry.id"
+      v-for="entry in resumeData.entries"
+    />
   </section>
 </template>
 

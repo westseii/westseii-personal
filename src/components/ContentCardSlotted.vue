@@ -11,7 +11,7 @@
     background: var(--wei-color-card);
     border-radius: 6px;
     overflow: auto;
-    padding: 12px;
+    padding: 0 12px 12px 12px;
   }
   .card:nth-child(n + 2) {
     margin-top: 12px;
